@@ -5,12 +5,11 @@ import java.util.ArrayList;
 public class King extends Piece 
 {
 	final static String name  = "King";
-	final static String image = "../images/king-white.png";
 	final static int value    = 999999999;
 	
 	public King(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, image);
+		super(name, pColor, value, pY, pX, "../images/king-" + pColor + ".png");
 	}
 	
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
@@ -40,12 +39,7 @@ public class King extends Piece
 	{
 		return name;
 	}
-	
-	public String getImage()
-	{
-		return image;
-	}
-	
+		
 	public int getValue()
 	{
 		return value;
