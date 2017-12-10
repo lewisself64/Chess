@@ -1,6 +1,7 @@
 package chess;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Image;
 
 import javax.imageio.ImageIO;
@@ -22,12 +23,16 @@ public class Square extends JButton
 	private Piece piece = null;
 	private Color color;
 	private boolean canOccupy = false;
-	boolean promotionSquare = false;
+	private boolean promotionSquare = false;
+	private boolean kingsideCastle = false;
+	private boolean queensideCastle = false;
 
 	Square(int pXCoordinate, int pYCoordinate)
 	{
 		this.xCoordinate = pXCoordinate;
 		this.yCoordinate = pYCoordinate;
+		
+		this.setPreferredSize(new Dimension(60, 60));
 		
 		// Calculate the colour of the square depending on the position on the board
 		if((xCoordinate % 2) == 0)
@@ -71,6 +76,21 @@ public class Square extends JButton
 		
 		// Set the square that it can be occupied
 		setCanOccupy(true);
+	}
+	
+	public void highlightSquare(String castlingSide)
+	{
+		highlightSquare();
+		
+		if(castlingSide == "kingside")
+		{
+			setKingsideCastle(true);
+		}
+		
+		if(castlingSide == "queenside")
+		{
+			setQueensideCastle(true);
+		}
 	}
 	
 	public void highlightSquare(Color pColor)
@@ -186,5 +206,29 @@ public class Square extends JButton
 
 	public void setCanOccupy(boolean canOccupy) {
 		this.canOccupy = canOccupy;
+	}
+
+	public boolean isPromotionSquare() {
+		return promotionSquare;
+	}
+
+	public void setPromotionSquare(boolean promotionSquare) {
+		this.promotionSquare = promotionSquare;
+	}
+
+	public boolean isKingsideCastle() {
+		return kingsideCastle;
+	}
+
+	public void setKingsideCastle(boolean kingsideCastle) {
+		this.kingsideCastle = kingsideCastle;
+	}
+
+	public boolean isQueensideCastle() {
+		return queensideCastle;
+	}
+
+	public void setQueensideCastle(boolean queensideCastle) {
+		this.queensideCastle = queensideCastle;
 	}
 }
