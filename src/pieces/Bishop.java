@@ -5,12 +5,11 @@ import java.util.ArrayList;
 public class Bishop extends Piece 
 {
 	final static String name  = "Bishop";
-	final static String image = "../images/bishop-white.png";
 	final static int value    = 3;
 	
 	public Bishop(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, image);
+		super(name, pColor, value, pY, pX, "../images/bishop-" + pColor + ".png");
 	}
 	
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
