@@ -28,15 +28,20 @@ public abstract class Piece
 
 	public ArrayList<ArrayList<Integer>> singlePath(int y, int x)
 	{
+		// Create the path for the piece
 		ArrayList<ArrayList<Integer>> path = new ArrayList<ArrayList<Integer>>();
 		
-		// Prevents the king going to squares off the board
+		// Prevents the piece going to squares off the board
 		if((y < 8 && y > -1) && (x < 8 && x > -1))
 		{
+			// Create an array to hold the coordinates for the movement
 			ArrayList<Integer> moves = new ArrayList<Integer>();
 
+			// Add the movement coordinates
 			moves.add(y);
 			moves.add(x);
+			
+			// Add the movement to the path 
 			path.add(moves);
 		}
 		
@@ -107,7 +112,7 @@ public abstract class Piece
 			// Add y and x coordinates to the ArrayList
 			moves.add(i);
 			moves.add(x);
-			
+			 
 			// Add each move to the left path
 			pathLeft.add(moves);
 		}
