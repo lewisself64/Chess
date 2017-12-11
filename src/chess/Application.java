@@ -4,17 +4,11 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class Application 
-{
-	/* 
-	 * To do list:
-	 * - Give the board the function to promote the pawn (In progress, need to give the user the option of the piece. Currently it defaults to queen)
-	 * - Figure out how to implement castling
-	 **/
-	
+{	
 	// Create a chess board
 	static Board board = new Board();
 	
-    public static void main(String[] args) 
+	public static void main(String[] args) 
     {
         Runnable r = new Runnable() 
         {
@@ -33,4 +27,16 @@ public class Application
 
         SwingUtilities.invokeLater(r);
     }
+	
+	/* Getters & Setters */
+	
+    public static Board getBoard() 
+    {
+		return board;
+	}
+
+	public static void setBoard(Board pBoard) 
+	{
+		board = pBoard;
+	}
 }
