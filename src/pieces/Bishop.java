@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Bishop extends Piece 
 {
-	final static String name  = "Bishop";
-	final static int value    = 3;
+	final static String name = "Bishop";
+	final static int value   = 3;
 	
 	public Bishop(String pColor, int pY, int pX)
 	{
 		super(name, pColor, value, pY, pX, "../images/bishop-" + pColor + ".png");
 	}
 	
+	@Override
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
 	{
 		// Create an array that holds all possible paths
@@ -23,6 +24,7 @@ public class Bishop extends Piece
 		possibleMoves.add(createPathBottomRight());
 		possibleMoves.add(createPathTopRight());
 		
+		// Return an ArrayList containing all paths and moves for the Bishop
 		return possibleMoves;
 	}
 }
