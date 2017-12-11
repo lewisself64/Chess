@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Queen extends Piece 
 {
-	final static String name  = "Queen";
-	final static int value    = 9;
+	final static String name = "Queen";
+	final static int value   = 9;
 	
 	public Queen(String pColor, int pY, int pX)
 	{
 		super(name, pColor, value, pY, pX, "../images/queen-" + pColor + ".png");
 	}
 	
+	@Override
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
 	{
 		// Create an array that holds all possible paths
