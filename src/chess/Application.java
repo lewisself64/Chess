@@ -30,11 +30,11 @@ public class Application
 	
 	/* Getters & Setters */
 	
-    public static Board getBoard() 
-    {
+	public static Board getBoard() 
+	{
 		return board;
 	}
-
+	
 	public static void setBoard(Board pBoard) 
 	{
 		board = pBoard;
