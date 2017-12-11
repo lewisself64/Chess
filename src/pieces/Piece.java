@@ -69,7 +69,7 @@ public abstract class Piece
 	/**
 	 * Calculates the path upwards of the piece.
 	 * 
-	 * @return Returns the path containing the x and y coordinates of the squares upwards of the piece
+	 * @return Returns a path for an upwards direction of the piece
 	 */
 	public ArrayList<ArrayList<Integer>> createPathUp()
 	{
@@ -201,6 +201,13 @@ public abstract class Piece
 		
 		return pathTopLeft;
 	}
+	
+	/**
+	 * Generates the movements for each type of piece
+	 * 
+	 * @return - Returns an ArrayList with all the paths the piece can take, and each individual move in the path
+	 */
+	public abstract ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves();
 		
 	public String getName() 
 	{
@@ -281,6 +288,4 @@ public abstract class Piece
 	{
 		this.firstMove = firstMove;
 	}
-	
-	public abstract ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves();
 }
