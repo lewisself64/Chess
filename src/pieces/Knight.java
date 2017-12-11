@@ -2,89 +2,44 @@ package pieces;
 
 import java.util.ArrayList;
 
-public class Pawn extends Piece 
+public class Knight extends Piece 
 {
-	private final static String name  = "Pawn";
-	private final static int value    = 1;
+	private final static String name = "Knight";
+	private final static int value   = 3;
 	
-	public Pawn(String pColor, int pY, int pX)
+	public Knight(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/pawn-" + pColor + ".png");
+		super(name, pColor, value, pY, pX, "../images/knight-" + pColor + ".png");
 	}
 	
+	@Override
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
 	{
-		// Create an array that holds all possible paths, moves and coordinates
+		// Create an array that holds all possible paths
 		ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves = new ArrayList<ArrayList<ArrayList<Integer>>>();
-		
-		ArrayList<ArrayList<Integer>> path = new ArrayList<ArrayList<Integer>>();
 		
 		// Get current piece location from piece class
 		int x = getX();
 		int y = getY();
-		
-		// Check the pieces colour, white moves upwards, black moves downwards
-		if(getColor() == "white")
-		{			
-			// Check if this is the first time a pawn has moved.
-			if(isFirstMove() == true)
-			{
-				// Loop through twice (Pawns can move 2 squares on their first move)
-				for(int i = x - 1; i > x - 3; i--)
-				{			
-					ArrayList<Integer> moves = new ArrayList<Integer>();
-					
-					moves.add(y);
-					moves.add(i);
-					path.add(moves);
-				}
-				
-				possibleMoves.add(path);
-			}
-			else
-			{
-				// If pawn has already moved, only let it move one square
-				possibleMoves.add(singlePath(y, x - 1));
-			}
-		}
-		else
-		{
-			// Check if this is the first time a pawn has moved.
-			if(isFirstMove() == true)
-			{
-				// Loop through twice (Pawns can move 2 squares on their first move)
-				for(int i = x + 1; i < x + 3; i++)
-				{			
-					ArrayList<Integer> moves = new ArrayList<Integer>();
-					
-					moves.add(y);
-					moves.add(i);
-					path.add(moves);
-				}
-				
-				possibleMoves.add(path);
-			}
-			else
-			{
-				// If pawn has already moved, only let it move one square
-				possibleMoves.add(singlePath(y, x + 1));
-			}
-		}
-		
-		return possibleMoves;
-	}
-	
-	public void prommote()
-	{
+							
+		// Creates all possible single space moves for the knight
+		possibleMoves.add(singlePath(y + 2, x - 1));
+		possibleMoves.add(singlePath(y + 2, x + 1));
+		possibleMoves.add(singlePath(y - 2, x - 1));
+		possibleMoves.add(singlePath(y - 2, x + 1));
+		possibleMoves.add(singlePath(y + 1, x - 2));
+		possibleMoves.add(singlePath(y + 1, x + 2));
+		possibleMoves.add(singlePath(y - 1, x - 2));
+		possibleMoves.add(singlePath(y - 1, x + 2));
 
-		System.out.println("");
+		return possibleMoves;
 	}
 	
 	public String getName()
 	{
 		return name;
 	}
-	
+		
 	public int getValue()
 	{
 		return value;
