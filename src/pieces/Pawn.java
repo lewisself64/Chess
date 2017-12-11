@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Pawn extends Piece 
 {
-	private final static String name  = "Pawn";
-	private final static String image = "../images/pawn-white.png";
-	private final static int value    = 1;
+	private final static String name = "Pawn";
+	private final static int value   = 1;
 	
 	public Pawn(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, image);
+		super(name, pColor, value, pY, pX, "../images/pawn-" + pColor + ".png");
 	}
 	
+	@Override
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
 	{
 		// Create an array that holds all possible paths, moves and coordinates
@@ -25,7 +25,7 @@ public class Pawn extends Piece
 		int y = getY();
 		
 		// Check the pieces colour, white moves upwards, black moves downwards
-		if(getColor() == "White")
+		if(getColor() == "white")
 		{			
 			// Check if this is the first time a pawn has moved.
 			if(isFirstMove() == true)
@@ -75,14 +75,15 @@ public class Pawn extends Piece
 		return possibleMoves;
 	}
 	
+	public void prommote()
+	{
+
+		System.out.println("");
+	}
+	
 	public String getName()
 	{
 		return name;
-	}
-	
-	public String getImage()
-	{
-		return image;
 	}
 	
 	public int getValue()
