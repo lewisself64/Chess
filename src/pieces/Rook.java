@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Rook extends Piece 
 {
-	final static String name  = "Rook";
-	final static int value    = 5;
+	final static String name = "Rook";
+	final static int value   = 5;
 	
 	public Rook(String pColor, int pY, int pX)
 	{
 		super(name, pColor, value, pY, pX, "../images/rook-" + pColor + ".png");
 	}
 	
+	@Override
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
 	{
 		// Create an array that holds all possible paths
@@ -22,7 +23,7 @@ public class Rook extends Piece
 		possibleMoves.add(createPathRight());
 		possibleMoves.add(createPathLeft());
 		possibleMoves.add(createPathDown());
-				
+		
 		return possibleMoves;
 	}
 	
