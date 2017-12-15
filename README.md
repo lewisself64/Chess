@@ -24,10 +24,8 @@ Once a pawn reaches the end of the board it can be turned into any piece the pla
 
 **Note:** If the user closes the popup instead of choosing a piece, the game will default the new piece to a Queen.
 
-Read More:
+**Useful links**:
 
 [En Passant](https://en.wikipedia.org/wiki/En_passant)
-
 [Castling](https://en.wikipedia.org/wiki/Castling)
-
 [Promotion](https://en.wikipedia.org/wiki/Promotion_(chess))
