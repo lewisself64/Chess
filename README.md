@@ -26,6 +26,6 @@ Once a pawn reaches the end of the board it can be turned into any piece the pla
 
 **Useful links**:
 
-[En Passant](https://en.wikipedia.org/wiki/En_passant)
-[Castling](https://en.wikipedia.org/wiki/Castling)
+[En Passant](https://en.wikipedia.org/wiki/En_passant) |
+[Castling](https://en.wikipedia.org/wiki/Castling) |
 [Promotion](https://en.wikipedia.org/wiki/Promotion_(chess))
