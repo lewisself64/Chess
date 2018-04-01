@@ -2,16 +2,31 @@ package pieces;
 
 import java.util.ArrayList;
 
+/**
+ * Creates all the attributes and movements for the Pawn
+ * 
+ * @author Lewis Self
+ * @version 1.0.0
+ */
 public class Pawn extends Piece 
 {
-	private final static String name = "Pawn";
-	private final static int value   = 1;
+	private boolean enPassant = false;
 	
+	/**
+	 * Creates the Pawn object.
+	 * 
+	 * @param pColor	The Pawns colour
+	 * @param pY		The y coordinate for the Pawn
+	 * @param pX		The x coordinate for the Pawn 
+	 */
 	public Pawn(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/pawn-" + pColor + ".png");
+		super("Pawn", pColor, 1, pY, pX, "../images/pawn-" + pColor + ".png");
 	}
 	
+	/**
+	 * @see pieces.Piece#possibleMoves()
+	 */
 	@Override
 	public ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves()
 	{
@@ -75,19 +90,19 @@ public class Pawn extends Piece
 		return possibleMoves;
 	}
 	
-	public void prommote()
+	/**
+	 * @return	Returns true if the move is an en-passant move and false if it's not
+	 */
+	public boolean isEnPassant() 
 	{
+		return enPassant;
+	}
 
-		System.out.println("");
-	}
-	
-	public String getName()
+	/**
+	 * @param enPassant	Sets the en-passant property for the pawn
+	 */
+	public void setEnPassant(boolean pEnPassant) 
 	{
-		return name;
-	}
-	
-	public int getValue()
-	{
-		return value;
+		enPassant = pEnPassant;
 	}
 }
