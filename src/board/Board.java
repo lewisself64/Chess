@@ -545,9 +545,12 @@ public class Board
 
     					// Set the piece as active
     					square.getPiece().setActive(true);
-
+    					
     					// Highlight all legal moves for the new piece
     					highlightLegalMoves(square.getPiece().possibleMoves());
+    					
+    					// Add highlight for moving piece
+    					square.setBackground(Color.yellow);
         			}
         		}
 			  
