@@ -2,6 +2,12 @@ package pieces;
 
 import java.util.ArrayList;
 
+/**
+ * Creates all the attributes and movements for all the chess pieces.
+ * 
+ * @author Lewis Self
+ * @version 1.0.0
+ */
 public abstract class Piece 
 {
 	private String name;
@@ -16,6 +22,16 @@ public abstract class Piece
 	private boolean active    = false;
 	private boolean firstMove = true;
 	
+	/**
+	 * Creates the piece object.
+	 * 
+	 * @param pName		The name of the Piece
+	 * @param pColor	The colour of the Piece (can only be white or black)
+	 * @param pValue	The value of the Piece. Queen = 9, Rook = 5, Knights & Bishop = 3 and pawns = 1
+	 * @param pY		The y coordinate of the Pieces current location
+	 * @param pX		The x coordinate of the Pieces current location
+	 * @param pImage	The image of the piece which will be displayed as an icon on the square
+	 */
 	Piece(String pName, String pColor, int pValue, int pY, int pX, String pImage)
 	{
 		this.name  = pName;
@@ -26,6 +42,14 @@ public abstract class Piece
 		this.image = pImage;
 	}
 
+	/**
+	 * Creates a single square path for the piece.
+	 * 
+	 * @param y	The y coordinate for the single move square
+	 * @param x	The x coordinate for the single move square
+	 * 
+	 * @return	Returns the path of squares the piece can move too
+	 */
 	public ArrayList<ArrayList<Integer>> singlePath(int y, int x)
 	{
 		// Create the path for the piece
@@ -48,6 +72,11 @@ public abstract class Piece
 		return path;
 	}
 	
+	/**
+	 * Creates a downwards path based on the current pieces location.
+	 * 
+	 * @return	Returns a path for an downwards direction of the piece
+	 */
 	public ArrayList<ArrayList<Integer>> createPathDown()
 	{
 		ArrayList<ArrayList<Integer>> pathDown = new ArrayList<ArrayList<Integer>>();
@@ -67,7 +96,7 @@ public abstract class Piece
 	}
 	
 	/**
-	 * Calculates the path upwards of the piece.
+	 * Creates a upwards path based on the current pieces location.
 	 * 
 	 * @return Returns a path for an upwards direction of the piece
 	 */
@@ -94,9 +123,9 @@ public abstract class Piece
 	}
 	
 	/**
-	 * Calculates the path to the left of the piece.
+	 * Creates a left path based on the current pieces location.
 	 * 
-	 * @return Returns the path containing the x and y coordinates of the squares to the left of the piece
+	 * @return Returns a path for an left direction of the piece
 	 */
 	public ArrayList<ArrayList<Integer>> createPathLeft()
 	{
@@ -120,6 +149,11 @@ public abstract class Piece
 		return pathLeft;
 	}
 	
+	/**
+	 * Creates a right path based on the current pieces location.
+	 * 
+	 * @return Returns a path for an right direction of the piece
+	 */
 	public ArrayList<ArrayList<Integer>> createPathRight()
 	{
 		ArrayList<ArrayList<Integer>> pathRight = new ArrayList<ArrayList<Integer>>();
@@ -138,6 +172,11 @@ public abstract class Piece
 		return pathRight;
 	}
 	
+	/**
+	 * Creates a bottom right diagonal path based on the current pieces location.
+	 * 
+	 * @return Returns a path for an bottom right diagonal direction of the piece
+	 */
 	public ArrayList<ArrayList<Integer>> createPathBottomRight()
 	{
 		ArrayList<ArrayList<Integer>> pathBottomRight = new ArrayList<ArrayList<Integer>>();
@@ -154,6 +193,11 @@ public abstract class Piece
 		return pathBottomRight;
 	}
 		
+	/**
+	 * Creates a top right diagonal path based on the current pieces location.
+	 * 
+	 * @return Returns a path for an top right diagonal direction of the piece
+	 */
 	public ArrayList<ArrayList<Integer>> createPathTopRight()
 	{
 		ArrayList<ArrayList<Integer>> pathTopRight = new ArrayList<ArrayList<Integer>>();
@@ -170,6 +214,11 @@ public abstract class Piece
 		return pathTopRight;
 	}
 	
+	/**
+	 * Creates a bottom left diagonal path based on the current pieces location.
+	 * 
+	 * @return Returns a path for an bottom left diagonal direction of the piece
+	 */
 	public ArrayList<ArrayList<Integer>> createPathBottomLeft()
 	{
 		ArrayList<ArrayList<Integer>> pathBottomLeft = new ArrayList<ArrayList<Integer>>();
@@ -186,6 +235,11 @@ public abstract class Piece
 		return pathBottomLeft;
 	}
 	
+	/**
+	 * Creates a top left diagonal path based on the current pieces location.
+	 * 
+	 * @return Returns a path for an top left diagonal direction of the piece
+	 */
 	public ArrayList<ArrayList<Integer>> createPathTopLeft()
 	{
 		ArrayList<ArrayList<Integer>> pathTopLeft = new ArrayList<ArrayList<Integer>>();
@@ -205,87 +259,171 @@ public abstract class Piece
 	/**
 	 * Generates the movements for each type of piece
 	 * 
-	 * @return - Returns an ArrayList with all the paths the piece can take, and each individual move in the path
+	 * @return	Returns all the paths the piece can take
 	 */
 	public abstract ArrayList<ArrayList<ArrayList<Integer>>> possibleMoves();
+	
+	/* ===================== */
+	/* = Getters & Setters = */
+	/* ===================== */
 		
+	/**
+	 * Returns the pieces name
+	 * 
+	 * @return	The pieces name
+	 */
 	public String getName() 
 	{
 		return name;
 	}
 
-	public void setName(String name) 
+	/**
+	 * Sets the piece name
+	 * 
+	 * @param name	New name for the piece 
+	 */
+	public void setName(String pName) 
 	{
-		this.name = name;
+		name = pName;
 	}
 
+	/**
+	 * Returns the pieces colour
+	 * 
+	 * @return	The pieces colour
+	 */
 	public String getColor() 
 	{
 		return color;
 	}
 
-	public void setColor(String color) 
+	/**
+	 * Sets the pieces colour
+	 * 
+	 * @param color	The new colour of the piece
+	 */
+	public void setColor(String pColor) 
 	{
-		this.color = color;
+		color = pColor;
 	}
 
+	/**
+	 * Returns the pieces value
+	 * 
+	 * @return	The value of the piece
+	 */
 	public int getValue() 
 	{
 		return value;
 	}
 
-	public void setValue(int value) 
+	/**
+	 * Sets the value of the piece
+	 * 
+	 * @param value	The new value of the piece
+	 */
+	public void setValue(int pValue) 
 	{
-		this.value = value;
+		value = pValue;
 	}
 
+	/**
+	 * Gets the pieces x coordinate
+	 * 
+	 * @return	The pieces x coordinate
+	 */
 	public int getX() 
 	{
 		return x;
 	}
 
-	public void setX(int x) 
+	/**
+	 * Sets the x coordinate for the piece
+	 * 
+	 * @param x	The new x coordinate for the piece
+	 */
+	public void setX(int pX) 
 	{
-		this.x = x;
+		x = pX;
 	}
 
+	/**
+	 * Gets the pieces y coordinate
+	 * 
+	 * @return	The pieces y coordinate
+	 */
 	public int getY() 
 	{
 		return y;
 	}
-
-	public void setY(int y) 
+	
+	/**
+	 * Sets the y coordinate for the piece
+	 * 
+	 * @param y	The new y coordinate for the piece
+	 */
+	public void setY(int pY) 
 	{
-		this.y = y;
+		y = pY;
 	}
 
+	/**
+	 * Gets the pieces image file
+	 * 
+	 * @return	The location of the image for the piece. This is used for the icons on the squares to indicate to the user which piece is currently on the square
+	 */
 	public String getImage() 
 	{
 		return image;
 	}
 
-	public void setImage(String image) 
+	/**
+	 * Sets the pieces image file
+	 * 
+	 * @param image	The new image file. The new image file will be used to display on squares which piece currently occupies it.
+	 */
+	public void setImage(String pImage) 
 	{
-		this.image = image;
+		image = pImage;
 	}
 
+	/**
+	 * Checks if the piece is currently active
+	 * 
+	 * @return	Returns true if the piece is currently active, false if it is not
+	 */
 	public boolean isActive() 
 	{
 		return active;
 	}
 
-	public void setActive(boolean active) 
+	/**
+	 * Sets the piece activity
+	 * 
+	 * @param active	New piece activity state
+	 */
+	public void setActive(boolean pActive) 
 	{
-		this.active = active;
+		active = pActive;
 	}
 
+	/**
+	 * Checks if a piece has not moved before
+	 * 
+	 * @return	Returns true if the piece hasn't moved before, and false if it has
+	 */
 	public boolean isFirstMove() 
 	{
 		return firstMove;
 	}
 
-	public void setFirstMove(boolean firstMove) 
+	/**
+	 * Sets the pieces first move
+	 * 
+	 * @param firstMove	The new property for the first move attribute
+	 */
+	public void setFirstMove(boolean pFirstMove) 
 	{
-		this.firstMove = firstMove;
+		firstMove = pFirstMove;
 	}
 }
