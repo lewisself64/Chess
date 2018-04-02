@@ -22,7 +22,7 @@ public class Queen extends Piece
 	 */
 	public Queen(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/queen-" + pColor + ".png");
+		super(name, pColor, value, pY, pX, "/images/queen-" + pColor + ".png");
 	}
 	
 	/**

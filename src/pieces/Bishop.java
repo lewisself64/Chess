@@ -22,7 +22,7 @@ public class Bishop extends Piece
 	 */
 	public Bishop(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/bishop-" + pColor + ".png");
+		super(name, pColor, value, pY, pX, "/images/bishop-" + pColor + ".png");
 	}
 	
 	/**

@@ -22,7 +22,7 @@ public class Knight extends Piece
 	 */
 	public Knight(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/knight-" + pColor + ".png");
+		super(name, pColor, value, pY, pX, "/images/knight-" + pColor + ".png");
 	}
 	
 	/**

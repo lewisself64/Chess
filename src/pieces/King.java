@@ -22,7 +22,7 @@ public class King extends Piece
 	 */
 	public King(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/king-" + pColor + ".png");
+		super(name, pColor, value, pY, pX, "/images/king-" + pColor + ".png");
 	}
 	
 	/**

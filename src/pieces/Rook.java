@@ -22,7 +22,7 @@ public class Rook extends Piece
 	 */
 	public Rook(String pColor, int pY, int pX)
 	{
-		super(name, pColor, value, pY, pX, "../images/rook-" + pColor + ".png");
+		super(name, pColor, value, pY, pX, "/images/rook-" + pColor + ".png");
 	}
 	
 	/**
