@@ -1,6 +1,7 @@
 package board;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
@@ -256,7 +257,7 @@ public class Square extends JButton
 	 * @param pPiece	The piece to occupy the square
 	 */
 	public void setPiece(Piece pPiece)
-	{
+	{		
 		// Occupies the square with a new Piece
 		this.piece = pPiece;
 		
@@ -265,11 +266,13 @@ public class Square extends JButton
 		{
 			// Set's the pieces icon on the square
 			setIcon(pPiece);
+			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		}
 		else
 		{
 			// Remove the piece icon
 			removeIcon();
+			setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		}
 	}
 	

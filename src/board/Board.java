@@ -275,7 +275,7 @@ public class Board
 									// Highlight square and notify player that they can capture the piece with a red colour
 									rightAttackWhite.highlightSquare(Color.RED);
 								}
-							  
+								
 								// Check if en-passant is playable
 								if(rightAttackWhite.isEnPassant() && (chessBoardSquares[movingPiece.getY() + 1][movingPiece.getX()].getPiece().getColor() != movingPiece.getColor()))
 								{
@@ -664,9 +664,10 @@ public class Board
             	// Create a new Square based on the current coordinates in the loop
                 Square square = new Square(i, j);
                 
-                // Set the margin to 0 and set the colour of the square
+                // Set the margin to 0, the square colour and remove the focus border
                 square.setMargin(new Insets(0, 0, 0, 0));
                 square.setBackground(square.getColor());
+                square.setFocusPainted(false);
                 
                 // Adds the click event for the square
                 squareClickEvent(square);

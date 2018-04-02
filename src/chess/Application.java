@@ -40,9 +40,9 @@ public class Application
                 gui.add(board.getGui());
                 gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 gui.setLocationByPlatform(true);
-                gui.setMinimumSize(gui.getSize()); // Prevent the user resizing less than the minimum width
                 gui.pack();
                 gui.setVisible(true);
+                gui.setResizable(false);
             }
         };
 

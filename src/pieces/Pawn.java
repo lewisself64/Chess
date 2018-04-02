@@ -21,7 +21,7 @@ public class Pawn extends Piece
 	 */
 	public Pawn(String pColor, int pY, int pX)
 	{
-		super("Pawn", pColor, 1, pY, pX, "../images/pawn-" + pColor + ".png");
+		super("Pawn", pColor, 1, pY, pX, "/images/pawn-" + pColor + ".png");
 	}
 	
 	/**
