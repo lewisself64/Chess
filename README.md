@@ -1,8 +1,8 @@
 # Chess Application
 
-This program creates a chess board and lets two players play a game of chess against each other. Once a player clicks on a piece it will  highlight the legal squares the piece selected can move too green. If an enemy piece can be captured it will highlight red instead of  green.
+This program creates a chess board and lets two players play a game of chess against each other. Once a player clicks on a piece it will  highlight the square yellow. The legal squares the piece selected can move too will turn green. If an enemy piece can be captured it will highlight red instead of  green.
 
-The game currently supports special moves in chess such as castling king or queenside and en-passant. Once a pawn has reached the end of  the board. A popup will appear and let the user select the piece they wish the pawn to turn into.
+The game currently supports special moves in chess such as castling king or queenside and en-passant. Once a pawn has reached the end of  the board. A popup will appear and let the user select the piece they wish the pawn to turn into. If the user does not select a piece and click close instead of one of the options it will default to a queen.
 
 ## Instructions
 
