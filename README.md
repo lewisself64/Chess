@@ -10,11 +10,11 @@ If it is your turn to move, click on the piece you wish to move. The board will 
 
 ### Castling
 
-In order to castle you must select the king. If castling is alowed in the current possition you should see the king should be alowed to move to the g or c square. Once you click on the move the rook will automatically move to the new position.
+In order to castle you must select the king. If castling is alowed in the current possition the king should be alowed to move two squares. Once you click on the move the rook will automatically move to the new position.
 
 ### En Passant
 
-If a pawn moves two squares next to an enemy pawn, you will be given the option to capture it as if it only moved one. The square will be highlighted as red even though there is no piece occupying this square. When you select this move, your pawn will move to the new location and the pawn which has moved 2 squares will be removed from the board.
+If a pawn moves two squares next to an enemy pawn, you will be given the option to capture it as if it only moved one. The square will be highlighted as red even though there is no piece occupying this square. When you select this move, your pawn will move to the new location and the enemy pawn will be removed from the board.
 
 **Note:** The capture can only be made on the move immediately after the opposing pawn makes the two square move.
 
@@ -23,7 +23,6 @@ If a pawn moves two squares next to an enemy pawn, you will be given the option 
 Once a pawn reaches the end of the board it can be turned into any piece the player wishes. A popup will appear with a list of radio options. You can select an option and click "promote" and the piece selected will appear in place of the pawn.
 
 **Note:** If the user closes the popup instead of choosing a piece, the game will default the new piece to a Queen.
-
 
 **Useful links**: 
 [En Passant](https://en.wikipedia.org/wiki/En_passant) |
